@@ -1,0 +1,19 @@
+(Linee contate nel file nuovo)
+
+line 0: Mancano le librerie <iostream>, <vector>, <stdexcept>, e <string> per usufruire di alcune funzioni chiamate nello script
+line 34 e 38: if (mounted) diventa if(!mounted) e mounted = false, unmount deve fare il contrario di mount
+line 123: aggiungo *this per passare un riferimento e non il puntatore dell'oggetto
+line 191-178: aggiungo &Rover per accettare solo riferimenti all'oggetto Rover
+line 178: aggiungo override per esplicitare che si sta sovrascrivendo il metodo use di Rover e void per correggere il tipo restituito dalla funzione
+from line 168 to 171: Sistemo errore di sintassi con cout
+line 159: Correggo l'errore di sintassi ( roba nosense prima ) restituendo un oggetto Rock inizializzato con quei valori ( dopo aver notato che la funzione restituisce Rock )
+line 98: aggiungo il nuovo payload all'oggetto
+line 221: Rimuovo * per passare un riferimento ( come si aspetta la funzione alla riga dopo ) e non un puntatore
+line 83: correggo il construttore di Rover, mantengo move per del bel codice in C++ veloce ( prima trasferiva cameras e rocks a loro stesse e si dimenticava delle altre variabili )
+line 15: Aggiungo dichiarazione di Rover prima di Payload per informare il compilatore che Rover esiste 
+line 218 e 228: aggiungo riga per smontare il payload
+line 236: controlla che il rover abbia fatto 3 foto, non 6
+
+fine: compilo ed eseguo per vedere se ci sono errori, sembra tutto OK 
+( controllo di usare almeno gcc7.1 e C++ 17 per assicurarmi che nodiscard non venga ignorato )
+scopro di avere g++ 6.3.0 quindi nodiscard rimmarrà ignorato
