@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.b931fb21.css",
-    "main.js": "/static/js/main.ef13e27e.js",
-    "index.html": "/index.html",
-    "main.b931fb21.css.map": "/static/css/main.b931fb21.css.map",
-    "main.ef13e27e.js.map": "/static/js/main.ef13e27e.js.map"
+    "main.css": "/stuck_on_you/build/static/css/main.b931fb21.css",
+    "main.js": "/stuck_on_you/build/static/js/main.ef13e27e.js",
+    "index.html": "/stuck_on_you/build/index.html",
+    "main.b931fb21.css.map": "/stuck_on_you/build/static/css/main.b931fb21.css.map",
+    "main.ef13e27e.js.map": "/stuck_on_you/build/static/js/main.ef13e27e.js.map"
   },
   "entrypoints": [
     "static/css/main.b931fb21.css",
