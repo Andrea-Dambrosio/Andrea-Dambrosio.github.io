@@ -1,0 +1,71 @@
+.noteContent,
+.noteInput {
+    --padding: 30px;
+    width: calc(100% - 2 * var(--padding));
+    height: calc(100% - 2 * var(--padding));
+    margin: 0;
+    padding: var(--padding);
+    backdrop-filter: blur(4px);
+    line-height: 30px;
+}
+.noteContent{
+    word-wrap: break-word; /* Permette al testo di andare a capo */
+    overflow-wrap: break-word;
+}
+.note {
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 5px 5px 11px rgba(98, 98, 98, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+.note[data-selected="true"]{  
+    z-index: 1000;      
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+.flowers{
+    transition: all .2s ease-in-out;
+}
+::selection {
+    background: rgba(
+        244,
+        8,
+        8,
+        0.3
+    ) !important; /* Colore di sfondo della selezione */
+    color: black; /* Colore del testo della selezione */
+}
+::-moz-selection {
+    background: rgba(
+        244,
+        8,
+        8,
+        0.3
+    ) !important; /* Colore di sfondo della selezione */
+    color: black; /* Colore del testo della selezione */
+}
+
+.noteInput {
+    color: white;
+    background: linear-gradient(
+        transparent 29px,
+        rgba(255, 255, 255, 0.3) 30px
+    );
+    background-size: 100% 30px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 18px;
+}
+
+.note *,
+.note {
+    border-radius: 50px;
+}
+.note .flowers {
+    width: 103%;
+    height: 103%;
+    filter: grayscale(30%);
+}
+.noteContentWrapper {
+    position: relative;
+}

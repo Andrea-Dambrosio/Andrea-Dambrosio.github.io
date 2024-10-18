@@ -11,14 +11,13 @@ class Results:
 
     def __init__(self, lines) -> None:
 
-        self.file = open(".result.txt", "w+")
+        self.file = open("./result.txt", "w+")
         # Copio il labirinto
         for line in lines:
             self.file.write(line)
 
         self.line_len = len(lines[0]) 
         self.file.seek(0)
-        pass
 
     # Non conta la prima riga
     current_line = -1
@@ -32,35 +31,52 @@ class Results:
         ) 
 
         self.file.write("#")
-        pass
 
-    def end(self, current_line, horizontal_position):
+    def end(self, current_line, horizontal_position, binaryString):
         self.file.close()
         print(f"Avanti: {horizontal_position}")
         print(f"Destra: {current_line}")
+        ascii_string = "".join(
+            [
+                chr(int(binaryString[i : i + 8], 2))
+                for i in range(0, len(binaryString), 8)
+            ]
+        )
+        print(ascii_string)
+        print(binaryString)
         exit(0)
-        pass
 
 
 def findWay(lines, results):
 
+    binaryString = ""
     partenza = False
     horizontal_position = 0
 
     for current_line, line in enumerate(lines):
 
         results.highlight(horizontal_position, new_line=True)
+
         while line[horizontal_position + 1] != ":":
 
             if line[horizontal_position + 1] == "-" and partenza:
                 print("Arrivo")
-                results.end(current_line, horizontal_position)
+                results.end(current_line, horizontal_position, binaryString)
             elif not partenza:
                 print("Inizio")
+                horizontal_position += 1
                 partenza = True
+
+            # right
+            if partenza:
+                binaryString += "1"
+
             horizontal_position += 1
             results.highlight(horizontal_position)
 
+        # down
+        if partenza:
+            binaryString+= "0"
 
 def main():
     lines = readFile()
